@@ -26,7 +26,6 @@ public class SeleniumTest {
 		searchInput.sendKeys("»ï¼ºÀüÀÚ");
 		searchInput.sendKeys(Keys.ENTER);
 		
-
 		
 		
 	}
