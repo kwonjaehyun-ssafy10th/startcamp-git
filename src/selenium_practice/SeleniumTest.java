@@ -19,17 +19,10 @@ public class SeleniumTest {
 		WebElement financeBtn = driver.findElement(By.cssSelector("#shortcutArea > ul > li:nth-child(6) > a"));
 		financeBtn.click();
 		
-		List<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
-		for (String handle: windowHandles) {
-			if(handle.equals("네이버 증권")) {
-				driver.switchTo().window(handle);
-				break;
-			}
-		}
-		
-		
+		ArrayList<String> windowHandles = new ArrayList<>(driver.getWindowHandles());
+		driver.switchTo().window(windowHandles.get(1));
+				
 		WebElement searchInput = driver.findElement(By.cssSelector("#stock_items"));
-		searchInput.click();
 		searchInput.sendKeys("삼성전자");
 		searchInput.sendKeys(Keys.ENTER);
 		
